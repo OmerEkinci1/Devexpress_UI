@@ -18,29 +18,49 @@ namespace AgteksDemo_UI.Services
         static HttpClient client = new HttpClient();
         Interpolation interpolation = new Interpolation();
 
-        static async Task<Interpolation> Add(Interpolation interpolation)
+        public static async Task<Interpolation> Add(Interpolation interpolation)
         {
             string apiAdd = "https://localhost:44368/api/interpolations/add";
-            var myHttpContent = JsonConvert.SerializeObject(interpolation);
-            var buffer = Encoding.UTF8.GetBytes(myHttpContent);
-            var byteContent = new ByteArrayContent(buffer);
-            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            return await client.PostAsync(apiAdd, myHttpContent);
+            //var myHttpContent = JsonConvert.SerializeObject(interpolation);
+            //var buffer = Encoding.UTF8.GetBytes(myHttpContent);
+            //var byteContent = new ByteArrayContent(buffer);
+            //byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var client = HttpClientFactory.Create();
+            return client.PostAsync<Interpolation>(apiAdd, interpolation, new JsonMediaTypeFormatter());
         }
 
-        static async Task<Interpolation> Delete(Interpolation interpolation)
+        public static async Task<Interpolation> Delete(Interpolation interpolation)
         {
-            string apiDelete = "https://localhost:44368/api/interpolations/delete";
-            return await client.DeleteAsync(apiDelete, interpolation.ID);
+            //string apiDelete = "https://localhost:44368/api/interpolations/delete";
+            //return await client.DeleteAsync(apiDelete, interpolation.ID);
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:44368/api/interpolations/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + delete);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    bool result = await response.Content.ReadAsAsync<bool>();
+                    if (result)
+                    {
+                        return response;
+                    }
+                }
+                
+                    
+            }
         }
 
-        static async Task<Interpolation> Update(Interpolation interpolation)
+        public static async Task<Interpolation> Update(Interpolation interpolation)
         {
             string apiUpdate = "https://localhost:44368/api/interpolations/update";
             return await client.PutAsync(apiUpdate, interpolation);
         }
 
-        static async Task<Interpolation> Get(Interpolation ınterpolation)
+        public static async Task<Interpolation> Get(Interpolation ınterpolation)
         {
             Interpolation interpolation =  null;
             HttpResponseMessage response = await client.GetAsync(interpolation.ImagePath);
@@ -51,7 +71,7 @@ namespace AgteksDemo_UI.Services
             return interpolation;
         }
 
-        static async Task<Interpolation> GetAll(Interpolation ınterpolation)
+        public static async Task<Interpolation> GetAll(Interpolation ınterpolation)
         {
             Interpolation interpolation = null;
         }

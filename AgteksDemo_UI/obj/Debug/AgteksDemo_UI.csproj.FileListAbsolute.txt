@@ -1,0 +1,7 @@
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csprojAssemblyReference.cache
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Forms.AddForm.resources
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Forms.MainPage.resources
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Properties.Resources.resources
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.GenerateResource.cache
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.exe.licenses
+D:\Desktop\AgteksDemo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.CoreCompileInputs.cache
