@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Socket_Connection.Connection;
+using System;
 
 namespace Socket_Connection
 {
@@ -6,7 +7,7 @@ namespace Socket_Connection
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AsynchronousClient.StartClient();
         }
     }
 }

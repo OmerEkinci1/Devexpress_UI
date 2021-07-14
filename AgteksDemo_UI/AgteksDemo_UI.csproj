@@ -111,6 +111,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Socket_Connection\Socket_Connection.csproj">
+      <Project>{49821b88-9f18-470e-ad48-ac16c293c590}</Project>
+      <Name>Socket_Connection</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

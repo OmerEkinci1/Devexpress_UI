@@ -30,7 +30,7 @@ namespace Socket_Connection.Connection
 
         private static String response = String.Empty; // pythondan gelecek response
 
-        private static void StartClient()
+        public static void StartClient()
         {
             // Pythona bağlanma 
             try
@@ -70,7 +70,7 @@ namespace Socket_Connection.Connection
             }
         }
 
-        private static void ConnectCallback(IAsyncResult ar)
+        public static void ConnectCallback(IAsyncResult ar)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Socket_Connection.Connection
             }
         }
 
-        private static void Receive(Socket client)
+        public static void Receive(Socket client)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace Socket_Connection.Connection
             }
         }
 
-        private static void ReceiveCallback(IAsyncResult ar)
+        public static void ReceiveCallback(IAsyncResult ar)
         {
             try
             {
@@ -148,7 +148,7 @@ namespace Socket_Connection.Connection
             }
         }
 
-        private static void Send(Socket client, String data)
+        public static void Send(Socket client, String data)
         {
             // stringi byte a çevirme.
             byte[] byteData = Encoding.ASCII.GetBytes(data);
@@ -158,7 +158,7 @@ namespace Socket_Connection.Connection
                 new AsyncCallback(SendCallback), client);
         }
 
-        private static void SendCallback(IAsyncResult ar)
+        public static void SendCallback(IAsyncResult ar)
         {
             try
             {
@@ -176,12 +176,6 @@ namespace Socket_Connection.Connection
             {
                 Console.WriteLine(e.ToString());
             }
-        }
-
-        public static int Main(String[] args)
-        {
-            StartClient();
-            return 0;
         }
     }
 }
