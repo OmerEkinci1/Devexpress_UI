@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgteksDemo_UI", "AgteksDemo_UI\AgteksDemo_UI.csproj", "{A10B3864-EC0B-4699-899E-6911E6AA2214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Socket_Connection", "Socket_Connection\Socket_Connection.csproj", "{49821B88-9F18-470E-AD48-AC16C293C590}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{A10B3864-EC0B-4699-899E-6911E6AA2214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10B3864-EC0B-4699-899E-6911E6AA2214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A10B3864-EC0B-4699-899E-6911E6AA2214}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49821B88-9F18-470E-AD48-AC16C293C590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49821B88-9F18-470E-AD48-AC16C293C590}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49821B88-9F18-470E-AD48-AC16C293C590}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49821B88-9F18-470E-AD48-AC16C293C590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

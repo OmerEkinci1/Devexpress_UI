@@ -1,0 +1,13 @@
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.exe
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.deps.json
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.runtimeconfig.json
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.runtimeconfig.dev.json
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.dll
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\bin\Debug\netcoreapp3.1\Socket_Connection.pdb
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.csprojAssemblyReference.cache
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.AssemblyInfoInputs.cache
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.AssemblyInfo.cs
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.csproj.CoreCompileInputs.cache
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.dll
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.pdb
+D:\Desktop\Agteks_Demo_UI\Socket_Connection\obj\Debug\netcoreapp3.1\Socket_Connection.genruntimeconfig.cache

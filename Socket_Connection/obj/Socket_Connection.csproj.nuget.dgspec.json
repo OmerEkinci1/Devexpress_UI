@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\AgteksDemo_UI\\Socket_Connection\\Socket_Connection.csproj": {}
+    "D:\\Desktop\\Agteks_Demo_UI\\Socket_Connection\\Socket_Connection.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\AgteksDemo_UI\\Socket_Connection\\Socket_Connection.csproj": {
+    "D:\\Desktop\\Agteks_Demo_UI\\Socket_Connection\\Socket_Connection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\AgteksDemo_UI\\Socket_Connection\\Socket_Connection.csproj",
+        "projectUniqueName": "D:\\Desktop\\Agteks_Demo_UI\\Socket_Connection\\Socket_Connection.csproj",
         "projectName": "Socket_Connection",
-        "projectPath": "D:\\Desktop\\AgteksDemo_UI\\Socket_Connection\\Socket_Connection.csproj",
+        "projectPath": "D:\\Desktop\\Agteks_Demo_UI\\Socket_Connection\\Socket_Connection.csproj",
         "packagesPath": "C:\\Users\\Omer\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\AgteksDemo_UI\\Socket_Connection\\obj\\",
+        "outputPath": "D:\\Desktop\\Agteks_Demo_UI\\Socket_Connection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Omer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
