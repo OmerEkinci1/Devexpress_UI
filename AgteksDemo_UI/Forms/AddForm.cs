@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraEditors;
+﻿using AgteksDemo_UI.Models;
+using AgteksDemo_UI.Services;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +13,71 @@ using System.Windows.Forms;
 
 namespace AgteksDemo_UI.Forms
 {
-    public partial class AddForm : DevExpress.XtraEditors.XtraUserControl
+    public partial class AddForm : Form
     {
+        private InterpolationService _interpolationService;
+        Interpolation interpolation = new Interpolation();
+        public AddForm(InterpolationService interpolationService)
+        {
+            _interpolationService = interpolationService;            
+        }
+
         public AddForm()
         {
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Add(interpolation);
+        }
+
+        private void btnPrediction_Click(object sender, EventArgs e)
+        {
+            Send();
+        }
+
+        public void Add(Interpolation interpolation)
+        {
+            lblClassName.Text = interpolation.ClassName;
+            btnSelectImage.Text = interpolation.ImagePath;
+
+            _interpolationService.Add(interpolation);
+        }
+
+        public void Send()
+        {
+            //var file = (IFormFile)pbPicture.Image;
+            //_interpolationService.Send(file);
+
+            // Buradan Python Deep Learning Modele prediction için resim göndericez. Resim Gönderirken UDP kullanıcaz.
+
+        }
+
+        private void btnSelectImage_Click(object sender, EventArgs e)
+        {
+            String imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+
+                    pbPicture.ImageLocation = imageLocation;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

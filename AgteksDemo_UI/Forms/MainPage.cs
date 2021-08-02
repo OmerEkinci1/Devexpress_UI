@@ -16,5 +16,11 @@ namespace AgteksDemo_UI.Forms
         {
             InitializeComponent();
         }
+
+        private void btnPrediction_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = new AddForm();
+            addForm.Show();
+        }
     }
 }

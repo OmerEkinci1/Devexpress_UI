@@ -37,12 +37,16 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormControl2 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager2 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.fluentDesignFormContainer2 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.picture = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.className = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblClassPicture = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrediction = new System.Windows.Forms.Button();
             this.lblRamUsage = new DevExpress.XtraEditors.LabelControl();
             this.lblSelectedLanguage = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -50,15 +54,13 @@ namespace AgteksDemo_UI.Forms
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.picture = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.className = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager2)).BeginInit();
             this.fluentDesignFormContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
@@ -66,8 +68,6 @@ namespace AgteksDemo_UI.Forms
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
@@ -76,9 +76,10 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormContainer1.Controls.Add(this.fluentDesignFormControl2);
             this.fluentDesignFormContainer1.Controls.Add(this.fluentDesignFormContainer2);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 39);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 31);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1146, 689);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1250, 884);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // accordionControl2
@@ -87,11 +88,11 @@ namespace AgteksDemo_UI.Forms
             this.accordionControl2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement2});
             this.accordionControl2.Location = new System.Drawing.Point(0, 0);
-            this.accordionControl2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.accordionControl2.Margin = new System.Windows.Forms.Padding(2);
             this.accordionControl2.Name = "accordionControl2";
             this.accordionControl2.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl2.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl2.Size = new System.Drawing.Size(60, 689);
+            this.accordionControl2.Size = new System.Drawing.Size(48, 884);
             this.accordionControl2.TabIndex = 4;
             this.accordionControl2.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -104,9 +105,9 @@ namespace AgteksDemo_UI.Forms
             // 
             this.fluentDesignFormControl2.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl2.Manager = this.fluentFormDefaultManager2;
-            this.fluentDesignFormControl2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.fluentDesignFormControl2.Margin = new System.Windows.Forms.Padding(2);
             this.fluentDesignFormControl2.Name = "fluentDesignFormControl2";
-            this.fluentDesignFormControl2.Size = new System.Drawing.Size(1146, 0);
+            this.fluentDesignFormControl2.Size = new System.Drawing.Size(1250, 0);
             this.fluentDesignFormControl2.TabIndex = 5;
             this.fluentDesignFormControl2.TabStop = false;
             // 
@@ -122,139 +123,20 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormContainer2.Controls.Add(this.panelControl1);
             this.fluentDesignFormContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer2.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormContainer2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.fluentDesignFormContainer2.Margin = new System.Windows.Forms.Padding(2);
             this.fluentDesignFormContainer2.Name = "fluentDesignFormContainer2";
-            this.fluentDesignFormContainer2.Size = new System.Drawing.Size(1146, 689);
+            this.fluentDesignFormContainer2.Size = new System.Drawing.Size(1250, 884);
             this.fluentDesignFormContainer2.TabIndex = 3;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.lblClassPicture);
-            this.panelControl2.Controls.Add(this.labelControl6);
-            this.panelControl2.Controls.Add(this.pbPicture);
-            this.panelControl2.Location = new System.Drawing.Point(571, 274);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(571, 414);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // lblClassPicture
-            // 
-            this.lblClassPicture.Location = new System.Drawing.Point(301, 234);
-            this.lblClassPicture.Name = "lblClassPicture";
-            this.lblClassPicture.Size = new System.Drawing.Size(8, 16);
-            this.lblClassPicture.TabIndex = 2;
-            this.lblClassPicture.Text = "..";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(124, 234);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(157, 16);
-            this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "The class of picture name :";
-            // 
-            // pbPicture
-            // 
-            this.pbPicture.Location = new System.Drawing.Point(189, 19);
-            this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(189, 190);
-            this.pbPicture.TabIndex = 0;
-            this.pbPicture.TabStop = false;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.button1);
-            this.panelControl1.Controls.Add(this.lblRamUsage);
-            this.panelControl1.Controls.Add(this.lblSelectedLanguage);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(571, -1);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(571, 274);
-            this.panelControl1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(226, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Go to Prediction Page";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lblRamUsage
-            // 
-            this.lblRamUsage.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRamUsage.Appearance.Options.UseFont = true;
-            this.lblRamUsage.Location = new System.Drawing.Point(321, 159);
-            this.lblRamUsage.Name = "lblRamUsage";
-            this.lblRamUsage.Size = new System.Drawing.Size(8, 16);
-            this.lblRamUsage.TabIndex = 4;
-            this.lblRamUsage.Text = "..";
-            // 
-            // lblSelectedLanguage
-            // 
-            this.lblSelectedLanguage.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSelectedLanguage.Appearance.Options.UseFont = true;
-            this.lblSelectedLanguage.Location = new System.Drawing.Point(321, 124);
-            this.lblSelectedLanguage.Name = "lblSelectedLanguage";
-            this.lblSelectedLanguage.Size = new System.Drawing.Size(8, 16);
-            this.lblSelectedLanguage.TabIndex = 3;
-            this.lblSelectedLanguage.Text = "..";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(186, 162);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(82, 16);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "RAM Usage :";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(136, 126);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(136, 16);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Selected Language : ";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(189, 68);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(234, 28);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "System Information";
-            // 
-            // fluentDesignFormControl1
-            // 
-            this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1146, 39);
-            this.fluentDesignFormControl1.TabIndex = 2;
-            this.fluentDesignFormControl1.TabStop = false;
-            // 
-            // fluentFormDefaultManager1
-            // 
-            this.fluentFormDefaultManager1.DockingEnabled = false;
-            this.fluentFormDefaultManager1.Form = this;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(64, 3);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(69, 2);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.MenuManager = this.fluentFormDefaultManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(502, 683);
+            this.gridControl1.Size = new System.Drawing.Size(538, 880);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -264,43 +146,188 @@ namespace AgteksDemo_UI.Forms
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.picture,
             this.className});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
             // picture
             // 
             this.picture.Caption = "Picture";
-            this.picture.MinWidth = 25;
+            this.picture.MinWidth = 21;
             this.picture.Name = "picture";
             this.picture.Visible = true;
             this.picture.VisibleIndex = 0;
-            this.picture.Width = 94;
+            this.picture.Width = 81;
             // 
             // className
             // 
             this.className.Caption = "Class Name";
-            this.className.MinWidth = 25;
+            this.className.MinWidth = 21;
             this.className.Name = "className";
             this.className.Visible = true;
             this.className.VisibleIndex = 1;
-            this.className.Width = 94;
+            this.className.Width = 81;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.lblClassPicture);
+            this.panelControl2.Controls.Add(this.labelControl6);
+            this.panelControl2.Controls.Add(this.pbPicture);
+            this.panelControl2.Location = new System.Drawing.Point(611, 279);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(636, 603);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // lblClassPicture
+            // 
+            this.lblClassPicture.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblClassPicture.Appearance.Options.UseFont = true;
+            this.lblClassPicture.Location = new System.Drawing.Point(436, 235);
+            this.lblClassPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblClassPicture.Name = "lblClassPicture";
+            this.lblClassPicture.Size = new System.Drawing.Size(12, 23);
+            this.lblClassPicture.TabIndex = 2;
+            this.lblClassPicture.Text = "..";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(162, 235);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(229, 23);
+            this.labelControl6.TabIndex = 1;
+            this.labelControl6.Text = "The class of picture name :";
+            // 
+            // pbPicture
+            // 
+            this.pbPicture.Location = new System.Drawing.Point(241, 48);
+            this.pbPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(162, 154);
+            this.pbPicture.TabIndex = 0;
+            this.pbPicture.TabStop = false;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnPrediction);
+            this.panelControl1.Controls.Add(this.lblRamUsage);
+            this.panelControl1.Controls.Add(this.lblSelectedLanguage);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Location = new System.Drawing.Point(611, -1);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(636, 279);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // btnPrediction
+            // 
+            this.btnPrediction.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPrediction.Location = new System.Drawing.Point(206, 176);
+            this.btnPrediction.Name = "btnPrediction";
+            this.btnPrediction.Size = new System.Drawing.Size(242, 33);
+            this.btnPrediction.TabIndex = 5;
+            this.btnPrediction.Text = "Go to the Prediction Page";
+            this.btnPrediction.UseVisualStyleBackColor = true;
+            this.btnPrediction.Click += new System.EventHandler(this.btnPrediction_Click);
+            // 
+            // lblRamUsage
+            // 
+            this.lblRamUsage.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRamUsage.Appearance.Options.UseFont = true;
+            this.lblRamUsage.Location = new System.Drawing.Point(418, 132);
+            this.lblRamUsage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblRamUsage.Name = "lblRamUsage";
+            this.lblRamUsage.Size = new System.Drawing.Size(10, 24);
+            this.lblRamUsage.TabIndex = 4;
+            this.lblRamUsage.Text = "..";
+            // 
+            // lblSelectedLanguage
+            // 
+            this.lblSelectedLanguage.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSelectedLanguage.Appearance.Options.UseFont = true;
+            this.lblSelectedLanguage.Location = new System.Drawing.Point(418, 92);
+            this.lblSelectedLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblSelectedLanguage.Name = "lblSelectedLanguage";
+            this.lblSelectedLanguage.Size = new System.Drawing.Size(10, 24);
+            this.lblSelectedLanguage.TabIndex = 3;
+            this.lblSelectedLanguage.Text = "..";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(258, 132);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(111, 24);
+            this.labelControl3.TabIndex = 2;
+            this.labelControl3.Text = "RAM Usage :";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(190, 92);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(179, 24);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Selected Language : ";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(206, 46);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(222, 29);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "System Information";
+            // 
+            // fluentDesignFormControl1
+            // 
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1250, 31);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.DockingEnabled = false;
+            this.fluentFormDefaultManager1.Form = this;
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 728);
+            this.ClientSize = new System.Drawing.Size(1250, 915);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
             this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager2)).EndInit();
             this.fluentDesignFormContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -310,8 +337,6 @@ namespace AgteksDemo_UI.Forms
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +355,6 @@ namespace AgteksDemo_UI.Forms
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private System.Windows.Forms.PictureBox pbPicture;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Button button1;
         private DevExpress.XtraEditors.LabelControl lblRamUsage;
         private DevExpress.XtraEditors.LabelControl lblSelectedLanguage;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -340,5 +364,6 @@ namespace AgteksDemo_UI.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn picture;
         private DevExpress.XtraGrid.Columns.GridColumn className;
+        private System.Windows.Forms.Button btnPrediction;
     }
 }
