@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using AgteksDemo_UI.Models.Helpers;
+using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,15 @@ namespace AgteksDemo_UI.Forms
         {
             AddForm addForm = new AddForm();
             addForm.Show();
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+            Int64 phav = PerformanceInfo.GetPhysicalAvailableMemoryInMiB();
+            Int64 tot = PerformanceInfo.GetTotalMemoryInMiB();
+            decimal percentFree = ((decimal)phav / (decimal)tot) * 100;
+            decimal percentOccupied = 100 - percentFree;
+            lblRamUsage.Text = percentOccupied.ToString(); // Makinenin kullandığı anlık RAM'i gösterir.
         }
     }
 }

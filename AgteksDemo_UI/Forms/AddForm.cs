@@ -15,6 +15,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgteksDemo_UI.Connection;
+using System.Buffers.Text;
+using NPOI.Util;
 
 namespace AgteksDemo_UI.Forms
 {
