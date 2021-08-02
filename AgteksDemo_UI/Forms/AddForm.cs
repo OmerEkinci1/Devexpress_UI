@@ -6,10 +6,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgteksDemo_UI.Connection;
 
 namespace AgteksDemo_UI.Forms
 {
@@ -17,6 +22,7 @@ namespace AgteksDemo_UI.Forms
     {
         private InterpolationService _interpolationService;
         Interpolation interpolation = new Interpolation();
+        public Socket sendSocket;
         public AddForm(InterpolationService interpolationService)
         {
             _interpolationService = interpolationService;            
@@ -26,7 +32,6 @@ namespace AgteksDemo_UI.Forms
         {
             InitializeComponent();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -39,7 +44,12 @@ namespace AgteksDemo_UI.Forms
 
         private void btnPrediction_Click(object sender, EventArgs e)
         {
-            Send();
+            var sendingImageData = pbPicture.Image.ToString();
+
+            byte[] imageArray = File.ReadAllBytes(sendingImageData);
+            string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+
+            AsynchronousClient.Send(sendSocket, base64ImageRepresentation);
         }
 
         public void Add(Interpolation interpolation)
@@ -48,15 +58,6 @@ namespace AgteksDemo_UI.Forms
             btnSelectImage.Text = interpolation.ImagePath;
 
             _interpolationService.Add(interpolation);
-        }
-
-        public void Send()
-        {
-            //var file = (IFormFile)pbPicture.Image;
-            //_interpolationService.Send(file);
-
-            // Buradan Python Deep Learning Modele prediction için resim göndericez. Resim Gönderirken UDP kullanıcaz.
-
         }
 
         private void btnSelectImage_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Socket_Connection.Connection
+namespace AgteksDemo_UI.Connection
 {
     public class StateObject
     {
@@ -177,5 +177,6 @@ namespace Socket_Connection.Connection
                 Console.WriteLine(e.ToString());
             }
         }
+
     }
 }
