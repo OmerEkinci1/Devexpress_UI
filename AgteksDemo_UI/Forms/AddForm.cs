@@ -22,12 +22,12 @@ namespace AgteksDemo_UI.Forms
 {
     public partial class AddForm : Form
     {
-        private InterpolationService _interpolationService;
-        Interpolation interpolation = new Interpolation();
+        private IntegrationService _integrationService;
+        Integration integration = new Integration();
         public Socket sendSocket;
-        public AddForm(InterpolationService interpolationService)
+        public AddForm(IntegrationService integrationService)
         {
-            _interpolationService = interpolationService;            
+            _integrationService = integrationService;            
         }
 
         public AddForm()
@@ -41,7 +41,7 @@ namespace AgteksDemo_UI.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Add(interpolation);
+            Add(integration);
         }
 
         private void btnPrediction_Click(object sender, EventArgs e)
@@ -52,14 +52,6 @@ namespace AgteksDemo_UI.Forms
             string base64ImageRepresentation = Convert.ToBase64String(imageArray);
 
             AsynchronousClient.Send(sendSocket, base64ImageRepresentation);
-        }
-
-        public void Add(Interpolation interpolation)
-        {
-            lblClassName.Text = interpolation.ClassName;
-            btnSelectImage.Text = interpolation.ImagePath;
-
-            _interpolationService.Add(interpolation);
         }
 
         private void btnSelectImage_Click(object sender, EventArgs e)
@@ -81,6 +73,14 @@ namespace AgteksDemo_UI.Forms
             {
                 MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Add(Integration integration)
+        {
+            integration.JSON_TEXT = txtJsonText.Text;
+            integration.PRODUCT_TYPE = Convert.ToInt16(txtProductType.Text);
+            integration.PICTURE = pbPicture.Image.ToString();
+            _integrationService.Add(integration);
         }
     }
 }

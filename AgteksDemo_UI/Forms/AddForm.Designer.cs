@@ -34,10 +34,12 @@ namespace AgteksDemo_UI.Forms
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pbPicture = new System.Windows.Forms.PictureBox();
-            this.lblClassName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelectImage = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtJsonText = new System.Windows.Forms.TextBox();
+            this.txtProductType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +69,7 @@ namespace AgteksDemo_UI.Forms
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(133, 437);
+            this.btnAdd.Location = new System.Drawing.Point(130, 532);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 33);
@@ -78,31 +80,13 @@ namespace AgteksDemo_UI.Forms
             // 
             // pbPicture
             // 
-            this.pbPicture.Location = new System.Drawing.Point(99, 261);
+            this.pbPicture.Location = new System.Drawing.Point(96, 328);
             this.pbPicture.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(213, 156);
+            this.pbPicture.Size = new System.Drawing.Size(213, 184);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 12;
             this.pbPicture.TabStop = false;
-            // 
-            // lblClassName
-            // 
-            this.lblClassName.Location = new System.Drawing.Point(281, 230);
-            this.lblClassName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(8, 16);
-            this.lblClassName.TabIndex = 11;
-            this.lblClassName.Text = "..";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(95, 230);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(134, 16);
-            this.labelControl1.TabIndex = 10;
-            this.labelControl1.Text = "The class of picture is :";
             // 
             // pictureBox1
             // 
@@ -126,18 +110,56 @@ namespace AgteksDemo_UI.Forms
             this.btnSelectImage.UseVisualStyleBackColor = true;
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "JSON TEXT :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "PRODUCT TYPE :";
+            // 
+            // txtJsonText
+            // 
+            this.txtJsonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJsonText.Location = new System.Drawing.Point(198, 242);
+            this.txtJsonText.Name = "txtJsonText";
+            this.txtJsonText.Size = new System.Drawing.Size(150, 27);
+            this.txtJsonText.TabIndex = 20;
+            // 
+            // txtProductType
+            // 
+            this.txtProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductType.Location = new System.Drawing.Point(198, 275);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.Size = new System.Drawing.Size(150, 27);
+            this.txtProductType.TabIndex = 21;
+            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 492);
+            this.ClientSize = new System.Drawing.Size(392, 600);
+            this.Controls.Add(this.txtProductType);
+            this.Controls.Add(this.txtJsonText);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSelectImage);
             this.Controls.Add(this.btnPrediction);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pbPicture);
-            this.Controls.Add(this.lblClassName);
-            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -158,9 +180,11 @@ namespace AgteksDemo_UI.Forms
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pbPicture;
-        private DevExpress.XtraEditors.LabelControl lblClassName;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSelectImage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtJsonText;
+        private System.Windows.Forms.TextBox txtProductType;
     }
 }
