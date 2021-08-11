@@ -1,4 +1,4 @@
-﻿using AgteksDemo_UI.Services;
+﻿using AgteksDemo_UI.Models.Helpers;
 using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
@@ -13,21 +13,27 @@ namespace AgteksDemo_UI.Forms
 {
     public partial class Main : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        private readonly IntegrationService _integrationService;
-
-        public Main(IntegrationService integrationService)
-        {
-            integrationService = _integrationService;
-        }
         public Main()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void fluentDesignFormControl1_Click(object sender, EventArgs e)
         {
-            AddForm form = new AddForm();
-            form.ShowDialog();
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            lblSelectedLanguage.Text = "C#/Devexpress";
+
+            // RAM USAGE
+            Int64 phav = PerformanceInfo.GetPhysicalAvailableMemoryInMiB();
+            Int64 tot = PerformanceInfo.GetTotalMemoryInMiB();
+            decimal percentFree = ((decimal)phav / (decimal)tot) * 100;
+            decimal percentOccupied = 100 - percentFree;
+            lblCurrentRamUsage.Text = percentOccupied.ToString() + " MB"; // Makinenin kullandığı anlık RAM'i gösterir.
+            lblTotalRamUsage.Text = tot.ToString() + " MB";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -35,15 +41,15 @@ namespace AgteksDemo_UI.Forms
             Application.Exit();
         }
 
-        private void populateGridView()
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            //string apiGetAll = "https://localhost:44368/api/integrations/getall";
-            //_integrationService.GetAll(apiGetAll);
+            AddForm add = new AddForm();
+            add.Show();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            populateGridView();
+
         }
 
         private void fluentDesignFormContainer1_Click(object sender, EventArgs e)

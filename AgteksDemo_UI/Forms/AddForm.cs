@@ -17,19 +17,17 @@ using System.Windows.Forms;
 using AgteksDemo_UI.Connection;
 using System.Buffers.Text;
 using NPOI.Util;
+using AgteksDemo_UI.Models.Responses;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace AgteksDemo_UI.Forms
 {
     public partial class AddForm : Form
     {
-        private IntegrationService _integrationService;
         Integration integration = new Integration();
         public Socket sendSocket;
-        public AddForm(IntegrationService integrationService)
-        {
-            _integrationService = integrationService;            
-        }
-
+        
         public AddForm()
         {
             InitializeComponent();
@@ -75,12 +73,12 @@ namespace AgteksDemo_UI.Forms
             }
         }
 
-        private void Add(Integration integration)
+        public void Add(Integration integration)
         {
             integration.JSON_TEXT = txtJsonText.Text;
             integration.PRODUCT_TYPE = Convert.ToInt16(txtProductType.Text);
             integration.PICTURE = pbPicture.Image.ToString();
-            _integrationService.Add(integration);
+            IntegrationService.Add(integration);
         }
     }
 }

@@ -16,33 +16,59 @@ using System.Threading.Tasks;
 
 namespace AgteksDemo_UI.Services
 {
-    public class IntegrationService
+    public static class IntegrationService
     {
-        public string apiUrl = "https://localhost:25709/api/integrations/";
+        public static string apiUrl = "http://localhost:25709/api/integrations/";
         static HttpClient client = new HttpClient();
 
-        public async Task<Integration> GetAll(string path)
+        public static List<Integration> GetAll()
         {
-            //string apiGetAll = "https://localhost:44368/api/integrations/getall";  // kullandığımız yerde bu api verilecek ve çalışacak.
-            Integration interpolation = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
+            ////string apiGetAll = "http://localhost:25709/api/integrations/getall";  // kullandığımız yerde bu api verilecek ve çalışacak.
+            //Integration interpolation = null;
+            //HttpResponseMessage response = await client.GetAsync(path);
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    interpolation = await response.Content.ReadAsAsync<Integration>();
+            //}
+            //return interpolation;
+            List<Integration> result;
+            const string url = "http://localhost:25709/api/integrations/getall";
+
+            using (var client = new System.Net.Http.HttpClient())
             {
-                interpolation = await response.Content.ReadAsAsync<Integration>();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add
+                (new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                var response = client.GetAsync(url).Result;
+                var data = response.Content.ReadAsStringAsync().Result;
+                result = JsonConvert.DeserializeObject<List<Integration>>(data);
             }
-            return interpolation;
+            return result;
         }
 
-        public async Task<Uri> Add(Integration integration)
+        public static void Add(Integration integration)
         {
-            string apiAdd = "https://localhost:25709/api/integrations/add";
-            HttpResponseMessage response = await client.PostAsJsonAsync(apiAdd, integration);
-            response.EnsureSuccessStatusCode();
+            string apiAdd = "http://localhost:25709/api/integrations/add";
+            //HttpResponseMessage response = client.PostAsJsonAsync(apiAdd, integration);
+            //response.EnsureSuccessStatusCode();
 
-            return response.Headers.Location;
+            //return response.Headers.Location;
+            //var json = JsonConvert.SerializeObject(integration);
+            //var data = new StringContent(json, Encoding.UTF8, "application/json");
+            //return client.PostAsync(apiAdd,data);
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var json = JsonConvert.SerializeObject(integration);
+                HttpContent content = new StringContent(json);
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var response = client.PostAsync(apiAdd, content).Result;
+            }
         }
 
-        public async Task<HttpStatusCode> Delete(Integration integration)
+        public static async Task<HttpStatusCode> Delete(Integration integration)
         {
             string apiDelete = "https://localhost:25709/api/integrations/delete=?{id}";
             HttpResponseMessage response = await client.DeleteAsync(apiDelete);
