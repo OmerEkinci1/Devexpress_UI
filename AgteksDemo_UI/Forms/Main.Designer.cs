@@ -30,10 +30,13 @@ namespace AgteksDemo_UI.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             DevExpress.Sparkline.LineSparklineView lineSparklineView1 = new DevExpress.Sparkline.LineSparklineView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.sparklineEdit1 = new DevExpress.XtraEditors.SparklineEdit();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblisProcessed = new System.Windows.Forms.Label();
@@ -58,22 +61,19 @@ namespace AgteksDemo_UI.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.sparklineEdit1 = new DevExpress.XtraEditors.SparklineEdit();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fluentDesignFormContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
@@ -85,18 +85,44 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(60, 39);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1127, 970);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1188, 1117);
             this.fluentDesignFormContainer1.TabIndex = 0;
-            this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
+            // 
+            // sparklineEdit1
+            // 
+            this.sparklineEdit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.sparklineEdit1.Location = new System.Drawing.Point(0, 901);
+            this.sparklineEdit1.MenuManager = this.fluentFormDefaultManager1;
+            this.sparklineEdit1.Name = "sparklineEdit1";
+            lineSparklineView1.ScaleFactor = 1.25F;
+            this.sparklineEdit1.Properties.View = lineSparklineView1;
+            this.sparklineEdit1.Size = new System.Drawing.Size(1189, 216);
+            this.sparklineEdit1.TabIndex = 3;
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.DockingEnabled = false;
+            this.fluentFormDefaultManager1.Form = this;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(283, 205);
+            this.panel3.Location = new System.Drawing.Point(314, 256);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(841, 561);
+            this.panel3.Size = new System.Drawing.Size(874, 642);
             this.panel3.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(869, 639);
+            this.dataGridView1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -113,16 +139,16 @@ namespace AgteksDemo_UI.Forms
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pbPicture);
-            this.panel2.Location = new System.Drawing.Point(3, 205);
+            this.panel2.Location = new System.Drawing.Point(3, 256);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(281, 561);
+            this.panel2.Size = new System.Drawing.Size(310, 643);
             this.panel2.TabIndex = 1;
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(90, 488);
+            this.btnDelete.Location = new System.Drawing.Point(100, 575);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 37);
             this.btnDelete.TabIndex = 14;
@@ -132,7 +158,7 @@ namespace AgteksDemo_UI.Forms
             // lblisProcessed
             // 
             this.lblisProcessed.AutoSize = true;
-            this.lblisProcessed.Location = new System.Drawing.Point(175, 439);
+            this.lblisProcessed.Location = new System.Drawing.Point(211, 520);
             this.lblisProcessed.Name = "lblisProcessed";
             this.lblisProcessed.Size = new System.Drawing.Size(16, 17);
             this.lblisProcessed.TabIndex = 13;
@@ -141,7 +167,7 @@ namespace AgteksDemo_UI.Forms
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(49, 439);
+            this.label13.Location = new System.Drawing.Point(85, 520);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(111, 17);
             this.label13.TabIndex = 12;
@@ -150,7 +176,7 @@ namespace AgteksDemo_UI.Forms
             // lblJsonText
             // 
             this.lblJsonText.AutoSize = true;
-            this.lblJsonText.Location = new System.Drawing.Point(175, 240);
+            this.lblJsonText.Location = new System.Drawing.Point(211, 321);
             this.lblJsonText.Name = "lblJsonText";
             this.lblJsonText.Size = new System.Drawing.Size(16, 17);
             this.lblJsonText.TabIndex = 11;
@@ -159,7 +185,7 @@ namespace AgteksDemo_UI.Forms
             // lblProcessedDt
             // 
             this.lblProcessedDt.AutoSize = true;
-            this.lblProcessedDt.Location = new System.Drawing.Point(175, 390);
+            this.lblProcessedDt.Location = new System.Drawing.Point(211, 471);
             this.lblProcessedDt.Name = "lblProcessedDt";
             this.lblProcessedDt.Size = new System.Drawing.Size(16, 17);
             this.lblProcessedDt.TabIndex = 10;
@@ -168,7 +194,7 @@ namespace AgteksDemo_UI.Forms
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(175, 335);
+            this.lblProductType.Location = new System.Drawing.Point(211, 416);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(16, 17);
             this.lblProductType.TabIndex = 9;
@@ -177,7 +203,7 @@ namespace AgteksDemo_UI.Forms
             // lblInsDt
             // 
             this.lblInsDt.AutoSize = true;
-            this.lblInsDt.Location = new System.Drawing.Point(175, 288);
+            this.lblInsDt.Location = new System.Drawing.Point(211, 369);
             this.lblInsDt.Name = "lblInsDt";
             this.lblInsDt.Size = new System.Drawing.Size(16, 17);
             this.lblInsDt.TabIndex = 8;
@@ -186,7 +212,7 @@ namespace AgteksDemo_UI.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(49, 240);
+            this.label7.Location = new System.Drawing.Point(85, 321);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 17);
             this.label7.TabIndex = 7;
@@ -195,7 +221,7 @@ namespace AgteksDemo_UI.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(49, 390);
+            this.label6.Location = new System.Drawing.Point(85, 471);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 6;
@@ -204,7 +230,7 @@ namespace AgteksDemo_UI.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 335);
+            this.label5.Location = new System.Drawing.Point(85, 416);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 17);
             this.label5.TabIndex = 5;
@@ -213,7 +239,7 @@ namespace AgteksDemo_UI.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 288);
+            this.label4.Location = new System.Drawing.Point(85, 369);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 4;
@@ -225,9 +251,9 @@ namespace AgteksDemo_UI.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(52, 19);
+            this.pbPicture.Location = new System.Drawing.Point(55, 43);
             this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(184, 198);
+            this.pbPicture.Size = new System.Drawing.Size(207, 243);
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
             // 
@@ -244,16 +270,15 @@ namespace AgteksDemo_UI.Forms
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 6);
+            this.panel1.Location = new System.Drawing.Point(3, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1122, 198);
+            this.panel1.Size = new System.Drawing.Size(1182, 246);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblTotalRamUsage
             // 
             this.lblTotalRamUsage.AutoSize = true;
-            this.lblTotalRamUsage.Location = new System.Drawing.Point(357, 136);
+            this.lblTotalRamUsage.Location = new System.Drawing.Point(417, 160);
             this.lblTotalRamUsage.Name = "lblTotalRamUsage";
             this.lblTotalRamUsage.Size = new System.Drawing.Size(16, 17);
             this.lblTotalRamUsage.TabIndex = 9;
@@ -263,7 +288,7 @@ namespace AgteksDemo_UI.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(128, 132);
+            this.label8.Location = new System.Drawing.Point(188, 156);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(166, 21);
             this.label8.TabIndex = 8;
@@ -272,7 +297,7 @@ namespace AgteksDemo_UI.Forms
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(880, 85);
+            this.btnExit.Location = new System.Drawing.Point(985, 116);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(101, 37);
             this.btnExit.TabIndex = 7;
@@ -283,7 +308,7 @@ namespace AgteksDemo_UI.Forms
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(753, 85);
+            this.button2.Location = new System.Drawing.Point(858, 116);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 37);
             this.button2.TabIndex = 6;
@@ -293,7 +318,7 @@ namespace AgteksDemo_UI.Forms
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(615, 84);
+            this.btnAdd.Location = new System.Drawing.Point(720, 115);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 37);
             this.btnAdd.TabIndex = 5;
@@ -304,7 +329,7 @@ namespace AgteksDemo_UI.Forms
             // lblCurrentRamUsage
             // 
             this.lblCurrentRamUsage.AutoSize = true;
-            this.lblCurrentRamUsage.Location = new System.Drawing.Point(357, 104);
+            this.lblCurrentRamUsage.Location = new System.Drawing.Point(417, 128);
             this.lblCurrentRamUsage.Name = "lblCurrentRamUsage";
             this.lblCurrentRamUsage.Size = new System.Drawing.Size(16, 17);
             this.lblCurrentRamUsage.TabIndex = 4;
@@ -313,7 +338,7 @@ namespace AgteksDemo_UI.Forms
             // lblSelectedLanguage
             // 
             this.lblSelectedLanguage.AutoSize = true;
-            this.lblSelectedLanguage.Location = new System.Drawing.Point(357, 72);
+            this.lblSelectedLanguage.Location = new System.Drawing.Point(417, 96);
             this.lblSelectedLanguage.Name = "lblSelectedLanguage";
             this.lblSelectedLanguage.Size = new System.Drawing.Size(16, 17);
             this.lblSelectedLanguage.TabIndex = 3;
@@ -323,7 +348,7 @@ namespace AgteksDemo_UI.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(108, 100);
+            this.label3.Location = new System.Drawing.Point(168, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 21);
             this.label3.TabIndex = 2;
@@ -333,7 +358,7 @@ namespace AgteksDemo_UI.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 68);
+            this.label2.Location = new System.Drawing.Point(172, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 21);
             this.label2.TabIndex = 1;
@@ -349,11 +374,6 @@ namespace AgteksDemo_UI.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "SYSTEM INFORMATION";
             // 
-            // fluentFormDefaultManager1
-            // 
-            this.fluentFormDefaultManager1.DockingEnabled = false;
-            this.fluentFormDefaultManager1.Form = this;
-            // 
             // accordionControl1
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -363,7 +383,7 @@ namespace AgteksDemo_UI.Forms
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(60, 970);
+            this.accordionControl1.Size = new System.Drawing.Size(60, 1117);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -378,38 +398,15 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1187, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1248, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.Click += new System.EventHandler(this.fluentDesignFormControl1_Click);
-            // 
-            // sparklineEdit1
-            // 
-            this.sparklineEdit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sparklineEdit1.Location = new System.Drawing.Point(3, 767);
-            this.sparklineEdit1.MenuManager = this.fluentFormDefaultManager1;
-            this.sparklineEdit1.Name = "sparklineEdit1";
-            lineSparklineView1.ScaleFactor = 1.25F;
-            this.sparklineEdit1.Properties.View = lineSparklineView1;
-            this.sparklineEdit1.Size = new System.Drawing.Size(1121, 200);
-            this.sparklineEdit1.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(841, 558);
-            this.dataGridView1.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 1009);
+            this.ClientSize = new System.Drawing.Size(1248, 1156);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
@@ -420,20 +417,20 @@ namespace AgteksDemo_UI.Forms
             this.Name = "Main";
             this.NavigationControl = this.accordionControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Ağteks";
             this.Load += new System.EventHandler(this.Main_Load);
             this.fluentDesignFormContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

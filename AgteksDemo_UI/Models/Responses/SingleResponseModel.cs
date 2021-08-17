@@ -8,6 +8,6 @@ namespace AgteksDemo_UI.Models.Responses
 {
     public interface SingleResponseModel<T> : ResponseModel
     {
-        T data { get; set; }
+        T data { get; }
     }
 }

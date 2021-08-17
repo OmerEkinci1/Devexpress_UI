@@ -4,8 +4,12 @@ using AgteksDemo_UI.Models.Responses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,42 +25,50 @@ namespace AgteksDemo_UI.Services
         public static string apiUrl = "http://localhost:25709/api/integrations/";
         static HttpClient client = new HttpClient();
 
-        public static List<Integration> GetAll()
+        // Sistemde yer alan ListResponseModel yapısı burada düzgün Parse yapılamadığından kullanılamadı. İleride eklenilmesi gerekmekte.
+        public static DataTable GetAll()
         {
-            ////string apiGetAll = "http://localhost:25709/api/integrations/getall";  // kullandığımız yerde bu api verilecek ve çalışacak.
-            //Integration interpolation = null;
-            //HttpResponseMessage response = await client.GetAsync(path);
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    interpolation = await response.Content.ReadAsAsync<Integration>();
-            //}
-            //return interpolation;
-            List<Integration> result;
+            DataTable rootObject = new DataTable();
             const string url = "http://localhost:25709/api/integrations/getall";
 
-            using (var client = new System.Net.Http.HttpClient())
+            using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add
-                (new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var response = client.GetAsync(url).Result;
                 var data = response.Content.ReadAsStringAsync().Result;
-                result = JsonConvert.DeserializeObject<List<Integration>>(data);
+                data = data.TrimStart('\"');
+                data = data.TrimEnd('\"');
+                data = data.Replace("\\", "");
+                rootObject = JsonConvert.DeserializeObject<DataTable>(data);
             }
-            return result;
+            return rootObject;
         }
 
-        public static void Add(Integration integration)
+        //public static List<Integration> GetAll()
+        //{
+        //    List<Integration> rootObject;
+        //    const string url = "http://localhost:25709/api/integrations/getall";
+
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(url);
+        //        client.DefaultRequestHeaders.Accept.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        var response = client.GetAsync(url).Result;
+        //        var data = response.Content.ReadAsStringAsync().Result;
+        //        data = data.TrimStart('\"');
+        //        data = data.TrimEnd('\"');
+        //        data = data.Replace("\\", "");
+        //        rootObject = JsonConvert.DeserializeObject<List<Integration>>(data);
+        //    }
+        //    return rootObject;
+        //}
+
+        public static HttpResponseMessage Add(Integration integration)
         {
             string apiAdd = "http://localhost:25709/api/integrations/add";
-            //HttpResponseMessage response = client.PostAsJsonAsync(apiAdd, integration);
-            //response.EnsureSuccessStatusCode();
-
-            //return response.Headers.Location;
-            //var json = JsonConvert.SerializeObject(integration);
-            //var data = new StringContent(json, Encoding.UTF8, "application/json");
-            //return client.PostAsync(apiAdd,data);
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Clear();
@@ -65,6 +77,7 @@ namespace AgteksDemo_UI.Services
                 HttpContent content = new StringContent(json);
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 var response = client.PostAsync(apiAdd, content).Result;
+                return response;
             }
         }
 

@@ -20,6 +20,9 @@ using NPOI.Util;
 using AgteksDemo_UI.Models.Responses;
 using Newtonsoft.Json;
 using System.Net.Http;
+using System.Drawing.Imaging;
+using AgteksDemo_UI.Models.Helpers;
+using AgteksDemo_UI.Helpers;
 
 namespace AgteksDemo_UI.Forms
 {
@@ -75,10 +78,30 @@ namespace AgteksDemo_UI.Forms
 
         public void Add(Integration integration)
         {
+            // CONVERT IMAGE BITMAP TO BASE64
+            byte[] imageArray = BitmapHelper.imageToByteArray(pbPicture.Image);
+            integration.PICTURE = imageArray;
             integration.JSON_TEXT = txtJsonText.Text;
             integration.PRODUCT_TYPE = Convert.ToInt16(txtProductType.Text);
-            integration.PICTURE = pbPicture.Image.ToString();
             IntegrationService.Add(integration);
+
+            // SAVE BITMAP TO LOCAL FOLDER
+            string fileName = DateTime.Now.ToString("MM-dd-yyyy-HHmmss") + "_" + integration.JSON_TEXT;
+            //Bitmap bitmapImage = BitmapHelper.ByteArrayToImage(imageArray);
+            string folderName = @"C:\services\";
+            string pathString = System.IO.Path.Combine(folderName, "Images");
+            pathString = System.IO.Path.Combine(pathString, fileName);
+            //bitmapImage.Save(pathString + ".bmp", ImageFormat.Bmp); // GDI HATASI VERİYOR, RESMİ BOZUK ATIYOR.
+
+            using (Bitmap bitmapImage = BitmapHelper.ByteArrayToImage(imageArray))
+            {
+                using (Graphics graphics = Graphics.FromImage(bitmapImage))
+                {
+                    graphics.Clear(Color.Transparent);
+                    graphics.DrawImage(pictureBox1.Image, new Point(0, 0));
+                }
+                bitmapImage.Save(pathString + ".bmp", ImageFormat.Bmp);
+            }
         }
     }
 }

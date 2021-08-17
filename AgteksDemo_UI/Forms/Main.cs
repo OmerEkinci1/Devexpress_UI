@@ -1,9 +1,12 @@
 ﻿using AgteksDemo_UI.Models.Helpers;
+using AgteksDemo_UI.Services;
 using DevExpress.XtraBars;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,11 +21,6 @@ namespace AgteksDemo_UI.Forms
             InitializeComponent();
         }
 
-        private void fluentDesignFormControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
             lblSelectedLanguage.Text = "C#/Devexpress";
@@ -34,6 +32,9 @@ namespace AgteksDemo_UI.Forms
             decimal percentOccupied = 100 - percentFree;
             lblCurrentRamUsage.Text = percentOccupied.ToString() + " MB"; // Makinenin kullandığı anlık RAM'i gösterir.
             lblTotalRamUsage.Text = tot.ToString() + " MB";
+
+            // POPULATE GRIDVIEW
+            populateGridview();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -47,14 +48,19 @@ namespace AgteksDemo_UI.Forms
             add.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void populateGridview()
         {
-
+            var result = IntegrationService.GetAll();
+            dataGridView1.DataSource = result;
         }
 
-        private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-
+            lblJsonText.Text     =   dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            lblInsDt.Text        =   dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            lblisProcessed.Text  =   dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            lblProcessedDt.Text  =   dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            lblProductType.Text  =   dataGridView1.SelectedRows[0].Cells[6].Value.ToString();       
         }
     }
 }

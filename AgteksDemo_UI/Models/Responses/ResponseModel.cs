@@ -8,7 +8,7 @@ namespace AgteksDemo_UI.Models.Responses
 {
     public interface ResponseModel
     {
-        bool Success { get; set; }
-        string Message { get; set; }
+        bool Success { get; }
+        string Message { get; }
     }
 }
