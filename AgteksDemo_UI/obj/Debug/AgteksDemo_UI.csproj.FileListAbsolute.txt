@@ -99,7 +99,6 @@ D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\de\DevExpress.Pdf.v20.2.Core.r
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\es\DevExpress.Pdf.v20.2.Core.resources.dll
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\ja\DevExpress.Pdf.v20.2.Core.resources.dll
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\ru\DevExpress.Pdf.v20.2.Core.resources.dll
-D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.AssemblyReference.cache
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Forms.AddForm.resources
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Forms.Main.resources
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.Properties.Resources.resources
@@ -109,3 +108,10 @@ D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.CoreCompi
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.CopyComplete
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.exe
 D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.pdb
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\obj\Debug\AgteksDemo_UI.csproj.AssemblyReference.cache
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\System.Text.Json.dll
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\System.ValueTuple.dll
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\System.Text.Json.xml
+D:\Desktop\Agteks_Demo_UI\AgteksDemo_UI\bin\Debug\System.ValueTuple.xml

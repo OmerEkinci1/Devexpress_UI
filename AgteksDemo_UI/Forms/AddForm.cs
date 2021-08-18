@@ -102,6 +102,7 @@ namespace AgteksDemo_UI.Forms
                 }
                 bitmapImage.Save(pathString + ".bmp", ImageFormat.Bmp);
             }
+            MessageBox.Show("Picture added");
         }
     }
 }

@@ -64,6 +64,7 @@ namespace AgteksDemo_UI.Forms
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.picture = new System.Windows.Forms.DataGridViewImageColumn();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -91,7 +92,7 @@ namespace AgteksDemo_UI.Forms
             // sparklineEdit1
             // 
             this.sparklineEdit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sparklineEdit1.Location = new System.Drawing.Point(0, 901);
+            this.sparklineEdit1.Location = new System.Drawing.Point(0, 900);
             this.sparklineEdit1.MenuManager = this.fluentFormDefaultManager1;
             this.sparklineEdit1.Name = "sparklineEdit1";
             lineSparklineView1.ScaleFactor = 1.25F;
@@ -108,21 +109,26 @@ namespace AgteksDemo_UI.Forms
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(314, 256);
+            this.panel3.Location = new System.Drawing.Point(292, 256);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(874, 642);
+            this.panel3.Size = new System.Drawing.Size(893, 642);
             this.panel3.TabIndex = 2;
             // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 0);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.picture});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(869, 639);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(897, 642);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
@@ -139,9 +145,9 @@ namespace AgteksDemo_UI.Forms
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pbPicture);
-            this.panel2.Location = new System.Drawing.Point(3, 256);
+            this.panel2.Location = new System.Drawing.Point(5, 256);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 643);
+            this.panel2.Size = new System.Drawing.Size(283, 642);
             this.panel2.TabIndex = 1;
             // 
             // btnDelete
@@ -158,7 +164,7 @@ namespace AgteksDemo_UI.Forms
             // lblisProcessed
             // 
             this.lblisProcessed.AutoSize = true;
-            this.lblisProcessed.Location = new System.Drawing.Point(211, 520);
+            this.lblisProcessed.Location = new System.Drawing.Point(168, 511);
             this.lblisProcessed.Name = "lblisProcessed";
             this.lblisProcessed.Size = new System.Drawing.Size(16, 17);
             this.lblisProcessed.TabIndex = 13;
@@ -167,7 +173,7 @@ namespace AgteksDemo_UI.Forms
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(85, 520);
+            this.label13.Location = new System.Drawing.Point(42, 511);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(111, 17);
             this.label13.TabIndex = 12;
@@ -176,7 +182,7 @@ namespace AgteksDemo_UI.Forms
             // lblJsonText
             // 
             this.lblJsonText.AutoSize = true;
-            this.lblJsonText.Location = new System.Drawing.Point(211, 321);
+            this.lblJsonText.Location = new System.Drawing.Point(168, 312);
             this.lblJsonText.Name = "lblJsonText";
             this.lblJsonText.Size = new System.Drawing.Size(16, 17);
             this.lblJsonText.TabIndex = 11;
@@ -185,7 +191,7 @@ namespace AgteksDemo_UI.Forms
             // lblProcessedDt
             // 
             this.lblProcessedDt.AutoSize = true;
-            this.lblProcessedDt.Location = new System.Drawing.Point(211, 471);
+            this.lblProcessedDt.Location = new System.Drawing.Point(168, 462);
             this.lblProcessedDt.Name = "lblProcessedDt";
             this.lblProcessedDt.Size = new System.Drawing.Size(16, 17);
             this.lblProcessedDt.TabIndex = 10;
@@ -194,7 +200,7 @@ namespace AgteksDemo_UI.Forms
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(211, 416);
+            this.lblProductType.Location = new System.Drawing.Point(168, 407);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(16, 17);
             this.lblProductType.TabIndex = 9;
@@ -203,7 +209,7 @@ namespace AgteksDemo_UI.Forms
             // lblInsDt
             // 
             this.lblInsDt.AutoSize = true;
-            this.lblInsDt.Location = new System.Drawing.Point(211, 369);
+            this.lblInsDt.Location = new System.Drawing.Point(168, 360);
             this.lblInsDt.Name = "lblInsDt";
             this.lblInsDt.Size = new System.Drawing.Size(16, 17);
             this.lblInsDt.TabIndex = 8;
@@ -212,7 +218,7 @@ namespace AgteksDemo_UI.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(85, 321);
+            this.label7.Location = new System.Drawing.Point(42, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 17);
             this.label7.TabIndex = 7;
@@ -221,7 +227,7 @@ namespace AgteksDemo_UI.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(85, 471);
+            this.label6.Location = new System.Drawing.Point(42, 462);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 6;
@@ -230,7 +236,7 @@ namespace AgteksDemo_UI.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(85, 416);
+            this.label5.Location = new System.Drawing.Point(42, 407);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 17);
             this.label5.TabIndex = 5;
@@ -239,7 +245,7 @@ namespace AgteksDemo_UI.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(85, 369);
+            this.label4.Location = new System.Drawing.Point(42, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 4;
@@ -251,9 +257,10 @@ namespace AgteksDemo_UI.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(55, 43);
+            this.pbPicture.Location = new System.Drawing.Point(47, 42);
             this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(207, 243);
+            this.pbPicture.Size = new System.Drawing.Size(194, 222);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
             // 
@@ -270,7 +277,7 @@ namespace AgteksDemo_UI.Forms
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 9);
+            this.panel1.Location = new System.Drawing.Point(3, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 246);
             this.panel1.TabIndex = 0;
@@ -402,6 +409,13 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
+            // picture
+            // 
+            this.picture.HeaderText = "BITMAP";
+            this.picture.MinimumWidth = 6;
+            this.picture.Name = "picture";
+            this.picture.Width = 125;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -468,5 +482,6 @@ namespace AgteksDemo_UI.Forms
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.SparklineEdit sparklineEdit1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewImageColumn picture;
     }
 }

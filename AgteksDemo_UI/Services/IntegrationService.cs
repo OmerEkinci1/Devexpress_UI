@@ -45,27 +45,6 @@ namespace AgteksDemo_UI.Services
             }
             return rootObject;
         }
-
-        //public static List<Integration> GetAll()
-        //{
-        //    List<Integration> rootObject;
-        //    const string url = "http://localhost:25709/api/integrations/getall";
-
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri(url);
-        //        client.DefaultRequestHeaders.Accept.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        var response = client.GetAsync(url).Result;
-        //        var data = response.Content.ReadAsStringAsync().Result;
-        //        data = data.TrimStart('\"');
-        //        data = data.TrimEnd('\"');
-        //        data = data.Replace("\\", "");
-        //        rootObject = JsonConvert.DeserializeObject<List<Integration>>(data);
-        //    }
-        //    return rootObject;
-        //}
-
         public static HttpResponseMessage Add(Integration integration)
         {
             string apiAdd = "http://localhost:25709/api/integrations/add";

@@ -25,5 +25,23 @@ namespace AgteksDemo_UI.Helpers
                 return new Bitmap(ms);
             }
         }
+
+        public static Bitmap Base64StringToBitmap(string base64string)
+        {
+            Bitmap bmpReturn = null;
+
+            byte[] byteBuffer = Convert.FromBase64String(base64string);
+            MemoryStream memorStream = new MemoryStream(byteBuffer);
+
+            memorStream.Position = 0;
+
+            bmpReturn = (Bitmap)Bitmap.FromStream(memorStream);
+
+            memorStream.Close();
+            memorStream = null;
+            byteBuffer = null;
+
+            return bmpReturn;
+        }
     }
 }

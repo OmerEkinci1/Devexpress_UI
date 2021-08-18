@@ -1,6 +1,9 @@
-﻿using AgteksDemo_UI.Models.Helpers;
+﻿using AgteksDemo_UI.Helpers;
+using AgteksDemo_UI.Models;
+using AgteksDemo_UI.Models.Helpers;
 using AgteksDemo_UI.Services;
 using DevExpress.XtraBars;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,6 +13,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace AgteksDemo_UI.Forms
@@ -48,19 +52,53 @@ namespace AgteksDemo_UI.Forms
             add.Show();
         }
 
-        private void populateGridview()
+        public void populateGridview()
         {
             var result = IntegrationService.GetAll();
             dataGridView1.DataSource = result;
+            var imageByteColumn = result.AsEnumerable()
+                                        .Select(s => s.Field<string>("PICTURE"))
+                                        .Distinct()
+                                        .ToList();
+            // TAKE BYTE ARRAY DATAS FROM JSON.
+            foreach (var item in imageByteColumn)
+            {
+                string imageSource = item;
+                Bitmap bmpFromString = BitmapHelper.Base64StringToBitmap(imageSource);
+                var picture = new Bitmap(bmpFromString);               
+            }
+            DataGridViewImageColumn bmp = new DataGridViewImageColumn();
+            bmp.DataPropertyName = "Bitmap";
+            bmp.HeaderText = "BITMAP";
+            bmp.Width = 200;
+            bmp.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dataGridView1.Columns.Add(bmp);
+
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblJsonText.Text     =   dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            lblInsDt.Text        =   dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            lblisProcessed.Text  =   dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            lblProcessedDt.Text  =   dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            lblProductType.Text  =   dataGridView1.SelectedRows[0].Cells[6].Value.ToString();       
+            if (dataGridView1.Rows.Count > 1)
+            {
+                lblJsonText.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                lblInsDt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                lblisProcessed.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                lblProcessedDt.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                lblProductType.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                // CONVERT STRİNG TO BASE64 // PRINT IMAGE TO PICTUREBOX
+                string imageSource = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                Bitmap bmpFromString = BitmapHelper.Base64StringToBitmap(imageSource);
+                var picture = new Bitmap(bmpFromString); // picture format
+                pbPicture.Image = picture;
+            }
+        }
+
+        public string DataTableToJSONWithStringBuilder(DataTable table)
+        {
+            string JSONString = string.Empty;
+            JSONString = JsonConvert.SerializeObject(table);
+            return JSONString;
         }
     }
 }
