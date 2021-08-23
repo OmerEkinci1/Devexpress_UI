@@ -60,12 +60,14 @@ namespace AgteksDemo_UI.Services
             }
         }
 
-        public static async Task<HttpStatusCode> Delete(Integration integration)
+        public static HttpResponseMessage Delete(int id)
         {
-            string apiDelete = "https://localhost:25709/api/integrations/delete=?{id}";
-            HttpResponseMessage response = await client.DeleteAsync(apiDelete);
-
-            return response.StatusCode;
+            string apiDelete = "https://localhost:25709/api/integrations/delete=?"+ id;
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(apiDelete);
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpResponseMessage response = client.DeleteAsync(apiDelete).Result;
+            return response;
         }
 
         //public async Task<Uri> Send(IFormFile file)
@@ -75,14 +77,6 @@ namespace AgteksDemo_UI.Services
         //    response.EnsureSuccessStatusCode();
 
         //    return response.Headers.Location;
-        //}
-
-        //public async Task<HttpStatusCode> Delete(int id)
-        //{
-        //    string apiDelete = "https://localhost:44368/api/interpolations/delete=?{id}";
-        //    HttpResponseMessage response = await client.DeleteAsync(apiDelete);
-
-        //    return response.StatusCode;
         //}
 
         //public async Task<Interpolation> Update(Interpolation interpolation)

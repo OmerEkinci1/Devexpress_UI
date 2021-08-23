@@ -61,33 +61,33 @@ namespace AgteksDemo_UI.Forms
                                         .Distinct()
                                         .ToList();
             // TAKE BYTE ARRAY DATAS FROM JSON.
-            foreach (var item in imageByteColumn)
+            Bitmap y = null;
+            var picture = y;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                string imageSource = item;
-                Bitmap bmpFromString = BitmapHelper.Base64StringToBitmap(imageSource);
-                var picture = new Bitmap(bmpFromString);               
+                foreach (var item in imageByteColumn)
+                {
+                    string imageSource = item;
+                    Bitmap bmpFromString = BitmapHelper.Base64StringToBitmap(imageSource);
+                    picture = new Bitmap(bmpFromString);
+                    break;
+                }
+                dataGridView1.Rows[i].Cells["bitmapImage"].Value = picture;
             }
-            DataGridViewImageColumn bmp = new DataGridViewImageColumn();
-            bmp.DataPropertyName = "Bitmap";
-            bmp.HeaderText = "BITMAP";
-            bmp.Width = 200;
-            bmp.ImageLayout = DataGridViewImageCellLayout.Normal;
-            dataGridView1.Columns.Add(bmp);
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Rows.Count > 1)
             {
-                lblJsonText.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                lblInsDt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                lblisProcessed.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                lblProcessedDt.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                lblProductType.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                lblJsonText.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                lblInsDt.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                lblisProcessed.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                lblProcessedDt.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                lblProductType.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
 
                 // CONVERT STRİNG TO BASE64 // PRINT IMAGE TO PICTUREBOX
-                string imageSource = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string imageSource = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 Bitmap bmpFromString = BitmapHelper.Base64StringToBitmap(imageSource);
                 var picture = new Bitmap(bmpFromString); // picture format
                 pbPicture.Image = picture;
@@ -99,6 +99,19 @@ namespace AgteksDemo_UI.Forms
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(table);
             return JSONString;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DeleteSelectedItem()
+        {
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            {
+                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+            }
         }
     }
 }

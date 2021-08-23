@@ -37,6 +37,7 @@ namespace AgteksDemo_UI.Forms
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bitmapImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblisProcessed = new System.Windows.Forms.Label();
@@ -64,7 +65,23 @@ namespace AgteksDemo_UI.Forms
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.picture = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtJsonText = new System.Windows.Forms.TextBox();
+            this.txtInsDt = new System.Windows.Forms.TextBox();
+            this.txtProcessedDt = new System.Windows.Forms.TextBox();
+            this.txtProductType = new System.Windows.Forms.TextBox();
+            this.txtIsProcessed = new System.Windows.Forms.TextBox();
+            this.btnJsonText = new System.Windows.Forms.Button();
+            this.btnInsDt = new System.Windows.Forms.Button();
+            this.btnProcessedDt = new System.Windows.Forms.Button();
+            this.btnProductType = new System.Windows.Forms.Button();
+            this.btnIsProcessed = new System.Windows.Forms.Button();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sparklineEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -75,10 +92,12 @@ namespace AgteksDemo_UI.Forms
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
             // 
+            this.fluentDesignFormContainer1.Controls.Add(this.panel4);
             this.fluentDesignFormContainer1.Controls.Add(this.sparklineEdit1);
             this.fluentDesignFormContainer1.Controls.Add(this.panel3);
             this.fluentDesignFormContainer1.Controls.Add(this.panel2);
@@ -86,18 +105,18 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(60, 39);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1188, 1117);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1539, 1342);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // sparklineEdit1
             // 
             this.sparklineEdit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sparklineEdit1.Location = new System.Drawing.Point(0, 900);
+            this.sparklineEdit1.Location = new System.Drawing.Point(3, 1123);
             this.sparklineEdit1.MenuManager = this.fluentFormDefaultManager1;
             this.sparklineEdit1.Name = "sparklineEdit1";
             lineSparklineView1.ScaleFactor = 1.25F;
             this.sparklineEdit1.Properties.View = lineSparklineView1;
-            this.sparklineEdit1.Size = new System.Drawing.Size(1189, 216);
+            this.sparklineEdit1.Size = new System.Drawing.Size(1536, 216);
             this.sparklineEdit1.TabIndex = 3;
             // 
             // fluentFormDefaultManager1
@@ -109,9 +128,9 @@ namespace AgteksDemo_UI.Forms
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(292, 256);
+            this.panel3.Location = new System.Drawing.Point(373, 480);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(893, 642);
+            this.panel3.Size = new System.Drawing.Size(1169, 642);
             this.panel3.TabIndex = 2;
             // 
             // dataGridView1
@@ -120,15 +139,23 @@ namespace AgteksDemo_UI.Forms
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.picture});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.bitmapImage});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.RowTemplate.Height = 100;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(897, 642);
+            this.dataGridView1.Size = new System.Drawing.Size(1163, 642);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // bitmapImage
+            // 
+            this.bitmapImage.HeaderText = "BITMAP";
+            this.bitmapImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.bitmapImage.MinimumWidth = 6;
+            this.bitmapImage.Name = "bitmapImage";
+            this.bitmapImage.Width = 125;
             // 
             // panel2
             // 
@@ -145,16 +172,16 @@ namespace AgteksDemo_UI.Forms
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pbPicture);
-            this.panel2.Location = new System.Drawing.Point(5, 256);
+            this.panel2.Location = new System.Drawing.Point(3, 480);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 642);
+            this.panel2.Size = new System.Drawing.Size(370, 642);
             this.panel2.TabIndex = 1;
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(100, 575);
+            this.btnDelete.Location = new System.Drawing.Point(122, 575);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 37);
             this.btnDelete.TabIndex = 14;
@@ -164,7 +191,7 @@ namespace AgteksDemo_UI.Forms
             // lblisProcessed
             // 
             this.lblisProcessed.AutoSize = true;
-            this.lblisProcessed.Location = new System.Drawing.Point(168, 511);
+            this.lblisProcessed.Location = new System.Drawing.Point(207, 511);
             this.lblisProcessed.Name = "lblisProcessed";
             this.lblisProcessed.Size = new System.Drawing.Size(16, 17);
             this.lblisProcessed.TabIndex = 13;
@@ -182,7 +209,7 @@ namespace AgteksDemo_UI.Forms
             // lblJsonText
             // 
             this.lblJsonText.AutoSize = true;
-            this.lblJsonText.Location = new System.Drawing.Point(168, 312);
+            this.lblJsonText.Location = new System.Drawing.Point(207, 312);
             this.lblJsonText.Name = "lblJsonText";
             this.lblJsonText.Size = new System.Drawing.Size(16, 17);
             this.lblJsonText.TabIndex = 11;
@@ -191,7 +218,7 @@ namespace AgteksDemo_UI.Forms
             // lblProcessedDt
             // 
             this.lblProcessedDt.AutoSize = true;
-            this.lblProcessedDt.Location = new System.Drawing.Point(168, 462);
+            this.lblProcessedDt.Location = new System.Drawing.Point(207, 462);
             this.lblProcessedDt.Name = "lblProcessedDt";
             this.lblProcessedDt.Size = new System.Drawing.Size(16, 17);
             this.lblProcessedDt.TabIndex = 10;
@@ -200,7 +227,7 @@ namespace AgteksDemo_UI.Forms
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(168, 407);
+            this.lblProductType.Location = new System.Drawing.Point(207, 407);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(16, 17);
             this.lblProductType.TabIndex = 9;
@@ -209,7 +236,7 @@ namespace AgteksDemo_UI.Forms
             // lblInsDt
             // 
             this.lblInsDt.AutoSize = true;
-            this.lblInsDt.Location = new System.Drawing.Point(168, 360);
+            this.lblInsDt.Location = new System.Drawing.Point(207, 360);
             this.lblInsDt.Name = "lblInsDt";
             this.lblInsDt.Size = new System.Drawing.Size(16, 17);
             this.lblInsDt.TabIndex = 8;
@@ -257,9 +284,9 @@ namespace AgteksDemo_UI.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(47, 42);
+            this.pbPicture.Location = new System.Drawing.Point(70, 41);
             this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(194, 222);
+            this.pbPicture.Size = new System.Drawing.Size(240, 200);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
@@ -277,9 +304,9 @@ namespace AgteksDemo_UI.Forms
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 8);
+            this.panel1.Location = new System.Drawing.Point(5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 246);
+            this.panel1.Size = new System.Drawing.Size(1534, 250);
             this.panel1.TabIndex = 0;
             // 
             // lblTotalRamUsage
@@ -304,7 +331,7 @@ namespace AgteksDemo_UI.Forms
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(985, 116);
+            this.btnExit.Location = new System.Drawing.Point(1163, 117);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(101, 37);
             this.btnExit.TabIndex = 7;
@@ -315,7 +342,7 @@ namespace AgteksDemo_UI.Forms
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(858, 116);
+            this.button2.Location = new System.Drawing.Point(1036, 117);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 37);
             this.button2.TabIndex = 6;
@@ -325,7 +352,7 @@ namespace AgteksDemo_UI.Forms
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(720, 115);
+            this.btnAdd.Location = new System.Drawing.Point(898, 116);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 37);
             this.btnAdd.TabIndex = 5;
@@ -375,7 +402,7 @@ namespace AgteksDemo_UI.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 21);
+            this.label1.Location = new System.Drawing.Point(619, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 29);
             this.label1.TabIndex = 0;
@@ -390,7 +417,7 @@ namespace AgteksDemo_UI.Forms
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(60, 1117);
+            this.accordionControl1.Size = new System.Drawing.Size(60, 1342);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -405,22 +432,178 @@ namespace AgteksDemo_UI.Forms
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1248, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1599, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
-            // picture
+            // panel4
             // 
-            this.picture.HeaderText = "BITMAP";
-            this.picture.MinimumWidth = 6;
-            this.picture.Name = "picture";
-            this.picture.Width = 125;
+            this.panel4.Controls.Add(this.btnIsProcessed);
+            this.panel4.Controls.Add(this.btnProcessedDt);
+            this.panel4.Controls.Add(this.btnProductType);
+            this.panel4.Controls.Add(this.btnInsDt);
+            this.panel4.Controls.Add(this.btnJsonText);
+            this.panel4.Controls.Add(this.txtIsProcessed);
+            this.panel4.Controls.Add(this.txtProcessedDt);
+            this.panel4.Controls.Add(this.txtProductType);
+            this.panel4.Controls.Add(this.txtInsDt);
+            this.panel4.Controls.Add(this.txtJsonText);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(6, 259);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1530, 218);
+            this.panel4.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(654, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(204, 29);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "FILTER SEARCH";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(48, 96);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(190, 18);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Seacrh by JSON TEXT :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(48, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 18);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Search by INS DT :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(546, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(229, 18);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Search by PROCESSED DT :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(546, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(227, 18);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Search by PRODUCT TYPE :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(1054, 96);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(222, 18);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Search by IS PROCESSED :";
+            // 
+            // txtJsonText
+            // 
+            this.txtJsonText.Location = new System.Drawing.Point(251, 91);
+            this.txtJsonText.Name = "txtJsonText";
+            this.txtJsonText.Size = new System.Drawing.Size(127, 23);
+            this.txtJsonText.TabIndex = 6;
+            // 
+            // txtInsDt
+            // 
+            this.txtInsDt.Location = new System.Drawing.Point(251, 129);
+            this.txtInsDt.Name = "txtInsDt";
+            this.txtInsDt.Size = new System.Drawing.Size(127, 23);
+            this.txtInsDt.TabIndex = 7;
+            // 
+            // txtProcessedDt
+            // 
+            this.txtProcessedDt.Location = new System.Drawing.Point(786, 124);
+            this.txtProcessedDt.Name = "txtProcessedDt";
+            this.txtProcessedDt.Size = new System.Drawing.Size(127, 23);
+            this.txtProcessedDt.TabIndex = 9;
+            // 
+            // txtProductType
+            // 
+            this.txtProductType.Location = new System.Drawing.Point(786, 91);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.Size = new System.Drawing.Size(127, 23);
+            this.txtProductType.TabIndex = 8;
+            // 
+            // txtIsProcessed
+            // 
+            this.txtIsProcessed.Location = new System.Drawing.Point(1276, 91);
+            this.txtIsProcessed.Name = "txtIsProcessed";
+            this.txtIsProcessed.Size = new System.Drawing.Size(127, 23);
+            this.txtIsProcessed.TabIndex = 10;
+            // 
+            // btnJsonText
+            // 
+            this.btnJsonText.Location = new System.Drawing.Point(393, 88);
+            this.btnJsonText.Name = "btnJsonText";
+            this.btnJsonText.Size = new System.Drawing.Size(94, 29);
+            this.btnJsonText.TabIndex = 11;
+            this.btnJsonText.Text = "Search";
+            this.btnJsonText.UseVisualStyleBackColor = true;
+            // 
+            // btnInsDt
+            // 
+            this.btnInsDt.Location = new System.Drawing.Point(393, 125);
+            this.btnInsDt.Name = "btnInsDt";
+            this.btnInsDt.Size = new System.Drawing.Size(94, 29);
+            this.btnInsDt.TabIndex = 12;
+            this.btnInsDt.Text = "Search";
+            this.btnInsDt.UseVisualStyleBackColor = true;
+            // 
+            // btnProcessedDt
+            // 
+            this.btnProcessedDt.Location = new System.Drawing.Point(922, 123);
+            this.btnProcessedDt.Name = "btnProcessedDt";
+            this.btnProcessedDt.Size = new System.Drawing.Size(94, 29);
+            this.btnProcessedDt.TabIndex = 14;
+            this.btnProcessedDt.Text = "Search";
+            this.btnProcessedDt.UseVisualStyleBackColor = true;
+            // 
+            // btnProductType
+            // 
+            this.btnProductType.Location = new System.Drawing.Point(922, 86);
+            this.btnProductType.Name = "btnProductType";
+            this.btnProductType.Size = new System.Drawing.Size(94, 29);
+            this.btnProductType.TabIndex = 13;
+            this.btnProductType.Text = "Search";
+            this.btnProductType.UseVisualStyleBackColor = true;
+            // 
+            // btnIsProcessed
+            // 
+            this.btnIsProcessed.Location = new System.Drawing.Point(1412, 88);
+            this.btnIsProcessed.Name = "btnIsProcessed";
+            this.btnIsProcessed.Size = new System.Drawing.Size(94, 29);
+            this.btnIsProcessed.TabIndex = 15;
+            this.btnIsProcessed.Text = "Search";
+            this.btnIsProcessed.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 1156);
+            this.ClientSize = new System.Drawing.Size(1599, 1381);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
@@ -445,6 +628,8 @@ namespace AgteksDemo_UI.Forms
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -482,6 +667,23 @@ namespace AgteksDemo_UI.Forms
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.SparklineEdit sparklineEdit1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn picture;
+        private System.Windows.Forms.DataGridViewImageColumn bitmapImage;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnIsProcessed;
+        private System.Windows.Forms.Button btnProcessedDt;
+        private System.Windows.Forms.Button btnProductType;
+        private System.Windows.Forms.Button btnInsDt;
+        private System.Windows.Forms.Button btnJsonText;
+        private System.Windows.Forms.TextBox txtIsProcessed;
+        private System.Windows.Forms.TextBox txtProcessedDt;
+        private System.Windows.Forms.TextBox txtProductType;
+        private System.Windows.Forms.TextBox txtInsDt;
+        private System.Windows.Forms.TextBox txtJsonText;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }
